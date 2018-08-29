@@ -1,0 +1,43 @@
+// Class to edit value of a node.
+
+public class NodeEdit {
+     public void change(Node jObj,Node nextNode){
+     Node k;
+     new GetNode();
+     k=nextNode;
+     if(n){
+      if(n->right) k = change(n->right,nextNode);
+      if(n->left) change(n->left,n->info);
+      n->info += k;
+     }
+    }
+    
+    public NodeEdit() {
+            public void valueChanged() {
+         
+    private static class GetNode {
+
+        String nodeId;
+
+        public GetNode(Integer nodeNumber) {
+            this.nodeNumber = nodeNumber;
+        }
+
+        public String nodeId() {
+            return nodeId;
+        }
+
+        
+        @Override
+        public String toString() {
+            return getName();
+        }
+    }
+
+ 
+    public static void main(String[] args) {
+        NodeEdit obj1 =new NodeEdit();
+            }
+        }
+    }
+}
