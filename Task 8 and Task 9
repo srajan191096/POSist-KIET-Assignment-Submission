@@ -1,0 +1,29 @@
+
+    // Method to calculate the longest path of the genesis node
+    int longestChain(Node jObj)
+    {
+        // for genesis node 
+        if (root == null)
+            return 0;
+ 
+        // for sibling nodes */
+        int lheight = height(root.left);
+        int rheight = height(root.right);
+ 
+        return Math.max(lheight + rheight + 1,
+                        Math.max(ldiameter, rdiameter));
+ 
+    }
+
+    static int NodeHeight(Node node)
+    {
+        // Genesis node 
+        if (node == null)
+            return 0;
+ 
+        //for sibling nodes
+        return (1 + Math.max(height(node.left), height(node.right)));
+    }
+ 
+   
+}
