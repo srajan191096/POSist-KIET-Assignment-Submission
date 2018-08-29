@@ -1,0 +1,81 @@
+import java.io.*;
+import java.util.Date;
+
+//Genesis Node ie the root node
+class GenesisNode{
+   static int check=0;// for holding the value for the parent node not greater than the sum of values of their siblings     
+    
+    int value;
+    Date timestamp;
+    String data;
+    int nodeNumber;
+    String nodeId;
+    String referenceNodeId;
+    String[] childReferenceNodeId;
+    String genesisReferenceNodeId;
+    String HashValue;
+    Node parent;// parent node for the genesis node     
+    Node[] child;//array to store the child nodes of the genesis node
+
+//Constructor for creating a Genesis Node
+GenesisNode(){
+    this.parent=null;//as the root node has no parent
+    this.value=0;
+    this.timestamp=null;
+    String data=null;
+    int nodeNumber=null;
+    String nodeId=null;
+    String referenceNodeId=;
+    String[] childReferenceNodeId=null;
+    String genesisReferenceNodeId=null;
+    String HashValue=null;
+    }
+    
+ //Constructor for creating a Genesis Node 
+GenesisNode(Node parent,int value,Date timestamp,String data,int nodeNumber,String nodeId,String referenceNodeId,String[] childReferenceNodeId,String genesisReferenceNodeId,String HashValue){
+    this.parent=parent;//as the root node has no parent
+    this.value=value;
+    this.timestamp=timestamp;
+    String data=data;
+    int nodeNumber=nodeNumber;
+    String nodeId=nodeId;
+    String referenceNodeId=referenceNodeId;
+    String[] childReferenceNodeId=childReferenceNodeId;
+    String genesisReferenceNodeId=genesisReferenceNodeId;
+    String HashValue=HashValue;
+    }
+    
+//Function to calculate the whether the sum of values of sibling  nodes are greater than the value at the genesis node      
+    boolean checkValue(Node jObj){
+         value = value+jObj.value;
+         if(jObj0.value<value){
+           return true;
+         else
+           return false;
+         }
+    
+// Function to calculate the Hash Value of the content of the each node. It returns a a hash value of SHA256.      
+    String Hash(){
+    return CryptoJS.SHA256(this.timestamp + this.data + this.nodeNumber + this.nodeId + this.referenceNodeId + this.childReferenceNodeId + this.genesisReferenceNodeId).toString();
+}
+    
+	public static void main (String[] args) {
+  boolean flag=false;
+  
+//TASK 1: object creation can initialise the GenesisNode with default values for its content
+		GenesisNode gObj0 = new GenesisNode();
+//TASK 2: set of child nodes of a genesis node gObj0    
+    GenesisNode gObj1 = new GenesisNode(gObj0,(01-May-2018),"Hye POSist",2,"12345678901234567890123456789012",gObj1,"null",gObj0,gObj1.Hash());
+    flag=gObj1.checkValue(gObj1.value);
+    if(flag==true){
+    GenesisNode gObj2 = new GenesisNode(gObj0,(01-May-2018),"Hye POSist",5,"12345678901234567890123456789012",gObj2,"null",gObj0,gObj2.Hash());
+    }
+    else
+     return 0;
+    flag =false;
+    if(flag==true){ 
+    gObj2.checkValue(gObj2.value);
+    GenesisNode gObj3 = new GenesisNode(gObj0,(01-May-2018),"Hye POSist",7,"12345678901234567890123456789012",gObj3,"null",gObj0,gObj3.Hash());
+    }
+  }
+}
