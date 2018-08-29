@@ -53,7 +53,17 @@ GenesisNode(Node parent,int value,Date timestamp,String data,int nodeNumber,Stri
          else
            return false;
          }
-    
+	 
+//To generate a new node by using hash function defined below.(Source Used: https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54)
+Node generateNextBlock(blockData){
+    Node previousBlock = getLatestBlock();
+    Node nextIndex = previousBlock.index + 1;
+    Nodet timestamp = new Date().getTime() / 1000;
+    Node Hash = Hash();
+    return new Block(nextIndex, previousBlock.hash, nextTimestamp, blockData, nextHash);
+}
+
+	    
 // Function to calculate the Hash Value of the content of the each node. It returns a a hash value of SHA256.      
     String Hash(){
     return CryptoJS.SHA256(this.timestamp + this.data + this.nodeNumber + this.nodeId + this.referenceNodeId + this.childReferenceNodeId + this.genesisReferenceNodeId).toString();
